@@ -1,7 +1,15 @@
 <?php
 include 'admin/koneksi.php';
+// Konten About
+$queryAbout = mysqli_query($koneksi, "SELECT  * FROM about");
+$rowAbout =  mysqli_fetch_assoc($queryAbout);
+// iSI kONTEN
 $queryKonten = mysqli_query($koneksi, "SELECT * FROM konten");
 $rowKonten = mysqli_fetch_assoc($queryKonten);
+//Home
+$querySetting = mysqli_query($koneksi, "SELECT * FROM general_setting ORDER BY id DESC");
+$rowSetting = mysqli_fetch_assoc($querySetting);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -89,18 +97,18 @@ $rowKonten = mysqli_fetch_assoc($queryKonten);
     <!-- Hero Section -->
     <section id="hero" class="hero section dark-background">
 
-    <img src="admin/upload/<?php echo $rowKonten['foto'] ?>" alt="" data-aos="fade-in">
+      <img src="admin/upload/<?php echo $rowSetting['logo'] ?>" alt="" data-aos="fade-in">
 
       <div class="container" data-aos="zoom-out" data-aos-delay="100">
         <!-- BUAT NAMBAH NAMA USER -->
-        <h2><?php echo $rowKonten['nama_user'] ?></h2>
+        <h2><?php echo $rowSetting['website_name'] ?></h2>
         <!-- BUAT NAMBAH KETERANGAN KONTEN -->
-        <p><?php echo $rowKonten['keterangan'] ?></p>
+        <p><?php echo $rowSetting['website_description'] ?></p>
         <div class="social-links">
-          <a href="#"><i class="bi bi-twitter-x"></i></a>
-          <a href="#"><i class="bi bi-facebook"></i></a>
+          <a href="https://github.com/nasywasyifa"><i class="bi bi-twitter-x"></i></a>
+          <a href="https://github.com/nasywasyifa"><i class="bi bi-facebook"></i></a>
           <a href="https://www.instagram.com/nasywaasyifa"><i class="bi bi-instagram"></i></a>
-          <a href="#"><i class="bi bi-linkedin"></i></a>
+          <a href="https://github.com/nasywasyifa"><i class="bi bi-linkedin"></i></a>
         </div>
       </div>
 
@@ -113,11 +121,11 @@ $rowKonten = mysqli_fetch_assoc($queryKonten);
       <h3 class="sitename">Personal</h3>
       <p>Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni eligendi fuga maxime saepe commodi placeat.</p>
       <div class="social-links d-flex justify-content-center">
-        <a href=""><i class="bi bi-twitter-x"></i></a>
-        <a href=""><i class="bi bi-facebook"></i></a>
-        <a href="https://www.instagram.com/nasywaasyifa"><i class="bi bi-instagram"></i></a>
-        <a href=""><i class="bi bi-skype"></i></a>
-        <a href=""><i class="bi bi-linkedin"></i></a>
+        <a href="<?php echo $rowSetting[''] ?>"><i class="bi bi-twitter-x"></i></a>
+        <a href="https://github.com/nasywasyifa"><i class="bi bi-facebook"></i></a>
+        <a target="_blank" href="https://www.instagram.com/nasywaasyifa"><i class="bi bi-instagram"></i></a>
+        <a href="https://github.com/nasywasyifa"><i class="bi bi-skype"></i></a>
+        <a href="https://github.com/nasywasyifa"><i class="bi bi-linkedin"></i></a>
       </div>
       <div class="container">
         <div class="copyright">

@@ -95,6 +95,7 @@ $row = mysqli_fetch_assoc($query);
                     <div class="row d-flex justify-content-center text-center">
                         <div class="col-lg-8">
                             <h1>About</h1>
+                            <p class="mb-0">Pengalaman profesional pada bidang Design, Product Management, Accounting dan Web Development. Memiliki kemampuan desain grafis, UI/UX design, visual produksi video & multimedia. Tertarik di bidang UI/UX Design, Product Management dan Bisnis. Saat ini memiliki keinginan untuk mengembangkan kemampuan pada bidang design terutama UI/UX design di lingkup profesional dengan mengikuti perkembangan industry dan role sales.</p>
                             <p class="mb-0"><?php
                                             echo $row['deskripsi_diri'];
                                             ?>
@@ -123,7 +124,7 @@ $row = mysqli_fetch_assoc($query);
                         <img src="assets/img/profile-img.jpg" class="img-fluid" alt="">
                     </div>
                     <div class="col-lg-8 content">
-                        <h2>UI/UX Designer &amp; Web Developer.</h2>
+                        <h2>Graphic Designer &amp; Web Developer.</h2>
                         <p class="fst-italic py-3">
                             <?php
                             echo $row['deskripsi_profesi'];
@@ -144,17 +145,17 @@ $row = mysqli_fetch_assoc($query);
                             </div>
                             <div class="col-lg-6">
                                 <ul>
-                                    <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>20</span></li>
-                                    <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>Master</span></li>
-                                    <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>email@example.com</span></li>
-                                    <li><i class="bi bi-chevron-right"></i> <strong>Freelance:</strong> <span>Available</span></li>
+                                    <li><i class="bi bi-chevron-right"></i> <strong>Birthday:</strong> <span>5 juni 2004</span></li>
+                                    <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>30</span></li>
+                                    <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>nasywahanifahnasy@example.com</span></li>
+                                    <li><i class="bi bi-chevron-right"></i> <strong>Github:</strong> <span>https://github.com/nasywasyifa</span></li>
                                 </ul>
                             </div>
                         </div>
-                        <!-- <p class="py-3">
+                        <p class="py-3">
                             Officiis eligendi itaque labore et dolorum mollitia officiis optio vero. Quisquam sunt adipisci omnis et ut. Nulla accusantium dolor incidunt officia tempore. Et eius omnis.
                             Cupiditate ut dicta maxime officiis quidem quia. Sed et consectetur qui quia repellendus itaque neque.
-                        </p> -->
+                        </p>
                     </div>
                 </div>
 

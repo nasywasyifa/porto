@@ -17,7 +17,7 @@ if (isset($_POST['simpan'])) {
         $ukuran_foto = $_FILES['foto']['size'];
 
         //png, jpg,  jpeg, gif
-        $ext = array('png', 'jpg', 'jpeg');
+        $ext = array('png', 'jpg', 'jpeg', 'jfif');
         $nextFoto = pathinfo($nama_foto, PATHINFO_EXTENSION);
 
         //JIKA EXTENSI FOTO TIDAK ADA EXT YANG TERDAFTAR DI  ARRAY EXT
@@ -54,8 +54,28 @@ if (isset($_POST['edit'])) {
         $password = $rowEdit['password'];
     }
 
-    $update = mysqli_query($koneksi, "UPDATE user SET nama='$nama',
-    email='$email', password='$password' WHERE id='$id'");
+    if (!empty($_FILES['foto']['name'])) {
+        $nama_foto = $_FILES['foto']['name'];
+        $ukuran_foto = $_FILES['foto']['size'];
+
+        //png, jpg,  jpeg, gif
+        $ext = array('png', 'jpg', 'jpeg', 'jfif');
+        $nextFoto = pathinfo($nama_foto, PATHINFO_EXTENSION);
+
+        //JIKA EXTENSI FOTO TIDAK ADA EXT YANG TERDAFTAR DI  ARRAY EXT
+        if (!in_array($nextFoto, $ext)) {
+            echo "Ext tidak ditemukan";
+            die;
+        } else {
+            // pindahkan gambar dari tmp folder yang sudah kita buat
+            move_uploaded_file($_FILES['foto']['tmp_name'], 'upload/' . $nama_foto);
+
+            $update = mysqli_query($koneksi,  "UPDATE user SET nama='$nama', email='$email', password='$password', foto='$nama_foto' WHERE id='$id'");
+        }
+    } else {
+        $update = mysqli_query($koneksi,  "UPDATE user SET nama='$nama', email='$email', password='$password' WHERE id='$id'");
+    }
+
     header("location:user.php?ubah=berhasil");
 }
 ?>
@@ -149,7 +169,7 @@ if (isset($_POST['edit'])) {
                                             <div class="mb-3 row">
                                                 <div class="col-sm-6">
                                                     <label for="" class="form-label">Password</label>
-                                                    <input type="password" name="password" placeholder="Masukan password anda" required class="form-control" id="">
+                                                    <input type="password" name="password" placeholder="Masukan password anda" class="form-control" id="">
                                                 </div>
                                             </div>
                                             <div class="mb-3 row">

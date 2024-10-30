@@ -93,6 +93,8 @@ if (isset($_GET['delete'])) {
                                                     <th>No</th>
                                                     <th>Nama</th>
                                                     <th>Email</th>
+                                                    <th>Password</th>
+                                                    <th>Photo</th>
                                                     <th>Aksi</th>
                                                 </tr>
                                             </thead>
@@ -101,15 +103,17 @@ if (isset($_GET['delete'])) {
                                                 while ($rowUser = mysqli_fetch_assoc($queryUser)) { ?>
                                                     <tr>
                                                         <td><?php echo $no++ ?></td>
-                                                        <td><?php echo $rowContact['name'] ?></td>
-                                                        <td><?php echo $rowContact['email'] ?></td>
-                                                        <td><?php echo $rowContact['subject'] ?></td>
-                                                        <td><?php echo $rowContact['message'] ?></td>
+                                                        <td><?php echo $rowUser['nama'] ?></td>
+                                                        <td><?php echo $rowUser['email'] ?></td>
+                                                        <td><?php echo $rowUser['password'] ?></td>
                                                         <td>
-                                                            <a href="kirim-pesan.php?pesanId=<?php echo $rowContact['id'] ?>" class="btn btn-success btn-sm">
+                                                            <img width="100px" style="border-radius: 12px;" src="upload/<?php echo $rowUser['foto'] ?>" alt="">
+                                                        </td>
+                                                        <td>
+                                                            <a href="tambah-user.php?edit=<?php echo $rowUser['id'] ?>" class="btn btn-success btn-sm">
                                                                 <span class="tf-icon bx bx-pencil bx-18px"></span></a>
                                                             <a onclick="return confirm('Apakah anda yakin akan menghapus data ini?')"
-                                                                href="user.php?delete=<?php echo $rowContact['id'] ?>" class="btn btn-danger btn-sm">
+                                                                href="user.php?delete=<?php echo $rowUser['id'] ?>" class="btn btn-danger btn-sm">
                                                                 <span class="tf-icon bx bx-trash bx-18px"></span></a>
                                                         </td>
                                                     </tr>

@@ -1,3 +1,13 @@
+<?php
+include 'admin/koneksi.php';
+
+$queryPendidikan =  mysqli_query($koneksi, "SELECT * FROM  pendidikan");
+//Pengalamam
+$queryPengalaman = mysqli_query($koneksi, "SELECT * FROM pengalaman ORDER BY id DESC");
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -108,42 +118,58 @@
             <div class="container">
 
                 <div class="row">
+                    <?php
+                    while ($rowPengalaman = mysqli_fetch_assoc($queryPengalaman)) { ?>
+                        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                            <h3 class="resume-title">Professional Experience</h3>
 
-                    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-                        <h3 class="resume-title">Sumary</h3>
+                            <div class="resume-item pb-0">
+                                <h4><?php echo $rowPengalaman['nama_perusahaan'] ?></h4>
+                                <h5><?php echo $rowPengalaman['jabatan'] ?></h5>
+                                <p><em>Internship - Accounting</em></p>
+                                <ul>
+                                    <li>Menerapkan software akuntansi Accurate Online dalam dunia bisnis</li>
+                                    <li>Menganalisis dan mencatat transaksi bisnis UMKM</li>
+                                    <li>Membuat laporan keuangan menggunakan software akuntansi Accurate Online</li>
+                                    <li>Memproses Entry Jurnal & Buku Besar</li>
+                                    <li>Mengoperasikan Paket Program Pengolah Angka/Spreadsheet</li>
 
-                        <div class="resume-item pb-0">
-                            <h4>Brandon Johnson</h4>
-                            <p><em>Innovative and deadline-driven Graphic Designer with 3+ years of experience designing and developing user-centered digital/print marketing material from initial concept to final, polished deliverable.</em></p>
-                            <ul>
-                                <li>Portland par 127,Orlando, FL</li>
-                                <li>(123) 456-7891</li>
-                                <li>alice.barkley@example.com</li>
-                            </ul>
-                        </div><!-- Edn Resume Item -->
+                                </ul>
+                                <!-- <p><em>
+                                    dddd
+                                </em></p> -->
+                            </div><!-- Edn Resume Item -->
 
-                        <h3 class="resume-title">Education</h3>
-                        <div class="resume-item">
-                            <h4>Master of Fine Arts &amp; Graphic Design</h4>
-                            <h5>2015 - 2016</h5>
-                            <p><em>Rochester Institute of Technology, Rochester, NY</em></p>
-                            <p>Qui deserunt veniam. Et sed aliquam labore tempore sed quisquam iusto autem sit. Ea vero voluptatum qui ut dignissimos deleniti nerada porti sand markend</p>
-                        </div><!-- Edn Resume Item -->
+                            <h3 class="resume-title">Education</h3>
+                            <?php
+                            while ($resultPendidikan = mysqli_fetch_assoc($queryPendidikan)):
+                            ?>
 
-                        <div class="resume-item">
+                                <div class="resume-item">
+                                    <h4><?php echo $resultPendidikan['sekolah'] ?>
+
+                                    </h4>
+                                    <h5><?php echo $resultPendidikan['tahun_pendidikan'] ?> </h5>
+
+                                    <p><em><?php echo $resultPendidikan['jurusan'] ?> </em></p>
+
+                                </div><!-- Edn Resume Item -->
+
+                            <?php endwhile ?>
+                            <!-- <div class="resume-item">
                             <h4>Bachelor of Fine Arts &amp; Graphic Design</h4>
                             <h5>2010 - 2014</h5>
                             <p><em>Rochester Institute of Technology, Rochester, NY</em></p>
                             <p>Quia nobis sequi est occaecati aut. Repudiandae et iusto quae reiciendis et quis Eius vel ratione eius unde vitae rerum voluptates asperiores voluptatem Earum molestiae consequatur neque etlon sader mart dila</p>
-                        </div><!-- Edn Resume Item -->
+                        </div>Edn Resume Item -->
 
-                    </div>
-
+                        </div>
+                    <?php } ?>
                     <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-                        <h3 class="resume-title">Professional Experience</h3>
+                        <h3 class="resume-title">Training Experience</h3>
                         <div class="resume-item">
-                            <h4>Senior graphic design specialist</h4>
-                            <h5>2019 - Present</h5>
+                            <h4>Graphic Design</h4>
+                            <h5> 2022 - Present</h5>
                             <p><em>Experion, New York, NY </em></p>
                             <ul>
                                 <li>Lead in the design, development, and implementation of the graphic, layout, and production communication materials</li>

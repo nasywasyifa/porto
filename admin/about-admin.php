@@ -2,7 +2,7 @@
 session_start();
 include 'koneksi.php';
 //munculkan / pilih sebuah atau semua kolom dari table user
-$queryUser = mysqli_query($koneksi, "SELECT  * FROM user");
+$queryUser = mysqli_query($koneksi, "SELECT  * FROM about");
 //mysqli_fetch_assoc($query) = untuk menjadikan hasil  query menjadi sebuah data (object, array)
 
 // jika parameternya ada ?delete=nilai param
@@ -10,7 +10,7 @@ if (isset($_GET['delete'])) {
     $id = $_GET['delete']; //mengambil nilai param
 
     // query / perintah hapus
-    $delete = mysqli_query($koneksi, "DELETE FROM user WHERE id ='$id'");
+    $delete = mysqli_query($koneksi, "DELETE FROM about WHERE id ='$id'");
     header("location:user.php?hapus=berhasil");
 }
 ?>
@@ -91,20 +91,32 @@ if (isset($_GET['delete'])) {
                                             <thead>
                                                 <tr>
                                                     <th>No</th>
-                                                    <th>Nama</th>
+                                                    <th>Deskripsi Diri</th>
+                                                    <th>Nama Profesi</th>
+                                                    <th>Deskripsi Profesi</th>
+                                                    <th>Tanggal Lahir</th>
+                                                    <th>City</th>
+                                                    <th>Umur</th>
                                                     <th>Email</th>
                                                     <th>Aksi</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 <?php $no = 1;
-                                                while ($rowUser = mysqli_fetch_assoc($queryUser)) { ?>
+                                                while ($rowContact = mysqli_fetch_assoc($queryUser)) { ?>
                                                     <tr>
                                                         <td><?php echo $no++ ?></td>
-                                                        <td><?php echo $rowContact['name'] ?></td>
+                                                        <td><?php echo $rowContact['deskripsi_diri'] ?></td>
+                                                        <td><?php echo $rowContact['nama_profesi'] ?></td>
+                                                        <td><?php echo $rowContact['deskripsi profesi'] ?></td>
+                                                        <td><?php echo $rowContact['birthday'] ?></td>
+                                                        <td><?php echo $rowContact['city'] ?></td>
+                                                        <td><?php echo $rowContact['age'] ?></td>
                                                         <td><?php echo $rowContact['email'] ?></td>
-                                                        <td><?php echo $rowContact['subject'] ?></td>
-                                                        <td><?php echo $rowContact['message'] ?></td>
+                                                        <td>
+                                                            <img width="100px" style="border-radius: 12px;" src="upload/<?php echo $rowContact['foto'] ?>" alt="">
+                                                        </td>
+
                                                         <td>
                                                             <a href="kirim-pesan.php?pesanId=<?php echo $rowContact['id'] ?>" class="btn btn-success btn-sm">
                                                                 <span class="tf-icon bx bx-pencil bx-18px"></span></a>

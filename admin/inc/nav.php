@@ -1,7 +1,7 @@
 <?php
 include 'koneksi.php';
-$id = $_SESSION['id'];
-$queryLoginUser = mysqli_query($koneksi, "SELECT * FROM user WHERE id ='$id'");
+
+$queryLoginUser = mysqli_query($koneksi, "SELECT * FROM user ");
 $rowLoginUser = mysqli_fetch_assoc($queryLoginUser);
 ?>
 
@@ -44,7 +44,7 @@ $rowLoginUser = mysqli_fetch_assoc($queryLoginUser);
             <li class="nav-item navbar-dropdown dropdown-user dropdown">
                 <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
                     <div class="avatar avatar-online">
-                        <img src="upload/<?php echo $rowLoginUser['foto'] ?>" alt class="w-px-40 h-auto rounded-circle" />
+                        <img src="upload/<?php echo isset($rowLoginUser['foto']) ? $rowLoginUser['foto'] : '' ?>" alt class="w-px-40 h-50 rounded-circle" />
                     </div>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end">
@@ -53,7 +53,7 @@ $rowLoginUser = mysqli_fetch_assoc($queryLoginUser);
                             <div class="d-flex">
                                 <div class="flex-shrink-0 me-3">
                                     <div class="avatar avatar-online">
-                                        <img src="upload/<?php echo $rowLoginUser['foto'] ?>" alt class="w-px-40 h-auto rounded-circle" />
+                                        <img src="upload/<?php echo isset($rowLoginUser['foto']) ? $rowLoginUser['foto'] : '' ?>" alt class="w-px-40 h-auto rounded-circle" />
                                     </div>
                                 </div>
                                 <div class="flex-grow-1">

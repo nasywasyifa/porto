@@ -65,7 +65,7 @@
         <li class="menu-item active">
             <a href="index.php" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-home-circle"></i>
-                <div data-i18n="Analytics">Dashboard</div>
+                <div data-i18n="Analytics"> </div>
             </a>
         </li>
 
@@ -120,8 +120,8 @@
                     </a>
                 </li>
                 <li class="menu-item">
-                    <a href="contact-admin.php" class="menu-link">
-                        <div data-i18n="Account">Contact</div>
+                    <a href="pengalaman.php" class="menu-link">
+                        <div data-i18n="Account">Data Pengalaman</div>
                     </a>
                 </li>
                 <li class="menu-item">
@@ -160,6 +160,72 @@
                 <li class="menu-item">
                     <a href="auth-forgot-password-basic.html" class="menu-link" target="_blank">
                         <div data-i18n="Basic">Forgot Password</div>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li class="menu-item">
+            <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-lock-open-alt"></i>
+                <div data-i18n="Authentications">Portofolio</div>
+            </a>
+            <ul class="menu-sub">
+                <li class="menu-item">
+                    <a href="about.php" class="menu-link" target="_blank">
+                        <div data-i18n="Basic">Setting about</div>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="contact.php" class="menu-link" target="_blank">
+                        <div data-i18n="Basic">Setting Contact</div>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="resume.php" class="menu-link" target="_blank">
+                        <div data-i18n="Basic">Setting Resume</div>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="index.php" class="menu-link" target="_blank">
+                        <div data-i18n="Basic">Setting Index</div>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="portofolio.php" class="menu-link" target="_blank">
+                        <div data-i18n="Basic">Setting Portofolio</div>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li class="menu-item">
+            <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-lock-open-alt"></i>
+                <div data-i18n="Authentications">Resume</div>
+            </a>
+            <ul class="menu-sub">
+                <li class="menu-item">
+                    <a href="pendidikan.php" class="menu-link" target="_blank">
+                        <div data-i18n="Basic">Pendidikan</div>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="pengalaman.php" class="menu-link" target="_blank">
+                        <div data-i18n="Basic">Pengalaman</div>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="resume.php" class="menu-link" target="_blank">
+                        <div data-i18n="Basic">Setting Resume</div>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="index.php" class="menu-link" target="_blank">
+                        <div data-i18n="Basic">Setting Index</div>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="portofolio.php" class="menu-link" target="_blank">
+                        <div data-i18n="Basic">Setting Portofolio</div>
                     </a>
                 </li>
             </ul>

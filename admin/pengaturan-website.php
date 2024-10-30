@@ -15,6 +15,7 @@ if (isset($_POST['simpan'])) {
     $website_phone = $_POST['website_phone'];
     $website_email = $_POST['website_email'];
     $website_address = $_POST['website_address'];
+    $website_description = $_POST['website_description'];
 
     //mencari data di dalam table pengaturan, jika ada data akan di update, jika tidak ada maka akan diinsert 
     //
@@ -24,7 +25,7 @@ if (isset($_POST['simpan'])) {
             $nama_foto = $_FILES['foto']['name'];
             $ukuran_foto = $_FILES['foto']['size'];
 
-            $ext = array('png', 'jpg', 'jpeg');
+            $ext = array('png', 'jpg', 'jpeg', 'jfif');
             $extFoto = pathinfo($nama_foto, PATHINFO_EXTENSION);
 
             //Jika path diatas tidak sesuai extension (ext,extFoto)
@@ -39,12 +40,12 @@ if (isset($_POST['simpan'])) {
                 move_uploaded_file($_FILES['foto']['tmp_name'], 'upload/' . $nama_foto);
 
                 //memindahkan foto ke folder upload
-                $update = mysqli_query($koneksi, "UPDATE general_setting SET website_name='$website_name', website_link='$website_link', logo='$nama_foto', website_phone ='$website_phone', website_email='$website_email', website_address='$website_address' WHERE id = '$id'");
+                $update = mysqli_query($koneksi, "UPDATE general_setting SET website_name='$website_name', website_link='$website_link', id='$id', website_phone ='$website_phone', website_email='$website_email', website_address='$website_address', website_description='$website_description' WHERE id = '$id'");
             }
         } else {
             // sql = structur query languages / DML = data manipulation language
             // select, insert. update, dan delete
-            $update = mysqli_query($koneksi, "UPDATE general_setting SET website_name='$website_name', website_link='$website_link', website_phone ='$website_phone', website_email='$website_email', website_address='$website_address' WHERE id = '$id'");
+            $update = mysqli_query($koneksi, "UPDATE general_setting SET website_name='$website_name', website_link='$website_link', id='$id', website_phone ='$website_phone', website_email='$website_email', website_address='$website_address', website_description='$website_description' WHERE id = '$id'");
         }
 
         // jika data berhasil diupdate maka akan diarahkan ke halaman pengaturan
@@ -54,21 +55,21 @@ if (isset($_POST['simpan'])) {
             $nama_foto = $_FILES['foto']['name'];
             $ukuran_foto = $_FILES['foto']['size'];
 
-            $ext = array('png', 'jpg', 'jpeg');
-            $extFoto = pathinfo($foto, PATHINFO_EXTENSION);
+            $ext = array('png', 'jpg', 'jpeg', 'jfif');
+            $extFoto = pathinfo($nama_foto, PATHINFO_EXTENSION);
 
             //Jika extensi foto tidak memenuhi syarat array extensi
             if (!in_array($extFoto, $ext)) {
                 echo "Gunakan Foto Lain";
                 die;
             } else {
-                move_uploaded_file($_FILES['foto']['tmp_name'], 'upload/' . $foto);  //memindahkan foto ke folder upload
-                $insert = mysqli_query($koneksi, "INSERT INTO general_setting (website_name, website_link, logo) VALUES ('$website_name', '$website_link', $nama_foto',website_phone ='$website_phone', website_email='$website_email', website_address='$website_address')");
+                move_uploaded_file($_FILES['foto']['tmp_name'], 'upload/' . $nama_foto);  //memindahkan foto ke folder upload
+                $insert = mysqli_query($koneksi, "INSERT INTO general_setting (website_name, website_link, logo) VALUES ('$website_name', '$website_link', '$nama_foto')");
             }
         } else {
             // sql = structur query languages / DML = data manipulation language
             // select, insert. update, dan delete
-            $insert = mysqli_query($koneksi, "INSERT INTO general_setting (website_name, website_link) VALUES ('$website_name', '$website_link', website_phone ='$website_phone', website_email='$website_email', website_address='$website_address')");
+            $insert = mysqli_query($koneksi, "INSERT INTO general_setting (website_name, website_link, logo) VALUES ('$website_name', '$website_link', website_phone)");
         }
     }
     header("location:pengaturan-website.php");
@@ -199,6 +200,12 @@ if (isset($_POST['edit'])) {
                                                         <input type="email" class="form-control" name="website_email" placeholder="Masukan email website"
                                                             required
                                                             value="<?php echo isset($rowPengaturan['website_email']) ? $rowPengaturan['website_email'] : '' ?>">
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="" class="form-label">Website Description</label>
+                                                        <input type="text" class="form-control" name="website_description" placeholder="Masukan deskripsi website"
+                                                            required
+                                                            value="<?php echo isset($rowPengaturan['website_description']) ? $rowPengaturan['website_description'] : '' ?>">
                                                     </div>
                                                 </div>
                                             </div>
