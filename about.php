@@ -95,10 +95,11 @@ $row = mysqli_fetch_assoc($query);
                     <div class="row d-flex justify-content-center text-center">
                         <div class="col-lg-8">
                             <h1>About</h1>
-                            <p class="mb-0">Pengalaman profesional pada bidang Design, Product Management, Accounting dan Web Development. Memiliki kemampuan desain grafis, UI/UX design, visual produksi video & multimedia. Tertarik di bidang UI/UX Design, Product Management dan Bisnis. Saat ini memiliki keinginan untuk mengembangkan kemampuan pada bidang design terutama UI/UX design di lingkup profesional dengan mengikuti perkembangan industry dan role sales.</p>
-                            <p class="mb-0"><?php
+                            <p class="mb-0">Professional experience in Design, Product Management, Accounting and Web Development. Have graphic design skills, UI/UX design, visual video & multimedia production. Interested in UI/UX Design, Product Management and Business. Currently have a desire to develop skills in design, especially UI/UX design in a professional scope by following industry developments and sales roles.</p>
+                            <p class="mb-0">
+                                <!-- <?php
                                             echo $row['deskripsi_diri'];
-                                            ?>
+                                            ?> -->
                             </p>
                         </div>
                     </div>
@@ -141,21 +142,23 @@ $row = mysqli_fetch_assoc($query);
                                                                                                             ?></span></li>
                                     <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span><?php echo $row['city'];
                                                                                                             ?></span></li>
+                                    <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span><?php echo $row['phone'];
+                                                                                                                ?></span></li>
                                 </ul>
                             </div>
-                            <div class="col-lg-6">
+                            <!-- <div class="col-lg-6">
                                 <ul>
                                     <li><i class="bi bi-chevron-right"></i> <strong>Birthday:</strong> <span>5 juni 2004</span></li>
                                     <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>30</span></li>
                                     <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>nasywahanifahnasy@example.com</span></li>
                                     <li><i class="bi bi-chevron-right"></i> <strong>Github:</strong> <span>https://github.com/nasywasyifa</span></li>
                                 </ul>
-                            </div>
+                            </div> -->
                         </div>
-                        <p class="py-3">
+                        <!-- <p class="py-3">
                             Officiis eligendi itaque labore et dolorum mollitia officiis optio vero. Quisquam sunt adipisci omnis et ut. Nulla accusantium dolor incidunt officia tempore. Et eius omnis.
                             Cupiditate ut dicta maxime officiis quidem quia. Sed et consectetur qui quia repellendus itaque neque.
-                        </p>
+                        </p> -->
                     </div>
                 </div>
 
@@ -497,7 +500,8 @@ $row = mysqli_fetch_assoc($query);
     <footer id="footer" class="footer dark-background">
         <div class="container">
             <h3 class="sitename">Personal</h3>
-            <p>Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni eligendi fuga maxime saepe commodi placeat.</p>
+            <p style="font-style: normal;">Hi everyone! My name is Nasywa Syifa Hanifah. I'm a web developer from Jakarta, Indonesia. I have 1 month of experience in web development. I really enjoy what I do right now. In my opinion, creating programs is not just a job but also an art that has aesthetic value.
+      My job is to build your website to be functional and user-friendly yet still attractive. In addition, I provide a personal touch to your product and ensure that the website catches attention and is easy to use. My goal is to convey your message and identity in the most creative way. If you are interested in hiring me, please contact the listed contact.</p>
             <div class="social-links d-flex justify-content-center">
                 <a href=""><i class="bi bi-twitter-x"></i></a>
                 <a href=""><i class="bi bi-facebook"></i></a>

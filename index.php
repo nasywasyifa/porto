@@ -105,10 +105,10 @@ $rowSetting = mysqli_fetch_assoc($querySetting);
         <!-- BUAT NAMBAH KETERANGAN KONTEN -->
         <p><?php echo $rowSetting['website_description'] ?></p>
         <div class="social-links">
-          <a href="https://github.com/nasywasyifa"><i class="bi bi-twitter-x"></i></a>
-          <a href="https://github.com/nasywasyifa"><i class="bi bi-facebook"></i></a>
-          <a href="https://www.instagram.com/nasywaasyifa"><i class="bi bi-instagram"></i></a>
-          <a href="https://github.com/nasywasyifa"><i class="bi bi-linkedin"></i></a>
+          <a target="_blank" href="https://twitter.com/"><i class="bi bi-twitter-x"></i></a>
+          <a target="_blank" href="https://www.facebook.com/"><i class="bi bi-facebook"></i></a>
+          <a target="_blank" href="https://www.instagram.com/nasywaasyifa"><i class="bi bi-instagram"></i></a>
+          <a target="_blank" href="https://www.linkedin.com/"><i class="bi bi-linkedin"></i></a>
         </div>
       </div>
 
@@ -119,13 +119,16 @@ $rowSetting = mysqli_fetch_assoc($querySetting);
   <footer id="footer" class="footer dark-background">
     <div class="container">
       <h3 class="sitename">Personal</h3>
-      <p>Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni eligendi fuga maxime saepe commodi placeat.</p>
+      <p style="font-style: normal;">Hi everyone! My name is Nasywa Syifa Hanifah. I'm a web developer from Jakarta, Indonesia. I have 1 month of experience in web development. I really enjoy what I do right now. In my opinion, creating programs is not just a job but also an art that has aesthetic value.
+      My job is to build your website to be functional and user-friendly yet still attractive. In addition, I provide a personal touch to your product and ensure that the website catches attention and is easy to use. My goal is to convey your message and identity in the most creative way. If you are interested in hiring me, please contact the listed contact.</p>
+        
       <div class="social-links d-flex justify-content-center">
-        <a href="<?php echo $rowSetting[''] ?>"><i class="bi bi-twitter-x"></i></a>
-        <a href="https://github.com/nasywasyifa"><i class="bi bi-facebook"></i></a>
+      <!-- <a target="_blank" href="<?php echo $rowSetting[''] ?>"><i class="bi bi-twitter-x"></i></a> -->
+        <a target="_blank" href="https://twitter.com"><i class="bi bi-twitter-x"></i></a>
+        <a target="_blank" href="https://www.facebook.com/"><i class="bi bi-facebook"></i></a>
         <a target="_blank" href="https://www.instagram.com/nasywaasyifa"><i class="bi bi-instagram"></i></a>
-        <a href="https://github.com/nasywasyifa"><i class="bi bi-skype"></i></a>
-        <a href="https://github.com/nasywasyifa"><i class="bi bi-linkedin"></i></a>
+        <a target="_blank" href="https://github.com/nasywasyifa"><i class="bi bi-github"></i></a>
+        <a target="_blank"href="https://www.linkedin.com/"><i class="bi bi-linkedin"></i></a>
       </div>
       <div class="container">
         <div class="copyright">
