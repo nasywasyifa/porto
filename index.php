@@ -121,6 +121,7 @@ $rowSetting = mysqli_fetch_assoc($querySetting);
       <h3 class="sitename">Personal</h3>
       <p style="font-style: normal;">Hi everyone! My name is Nasywa Syifa Hanifah. I'm a web developer from Jakarta, Indonesia. I have 1 month of experience in web development. I really enjoy what I do right now. In my opinion, creating programs is not just a job but also an art that has aesthetic value.
       My job is to build your website to be functional and user-friendly yet still attractive. In addition, I provide a personal touch to your product and ensure that the website catches attention and is easy to use. My goal is to convey your message and identity in the most creative way. If you are interested in hiring me, please contact the listed contact.</p>
+      
         
       <div class="social-links d-flex justify-content-center">
       <!-- <a target="_blank" href="<?php echo $rowSetting[''] ?>"><i class="bi bi-twitter-x"></i></a> -->
@@ -129,7 +130,8 @@ $rowSetting = mysqli_fetch_assoc($querySetting);
         <a target="_blank" href="https://www.instagram.com/nasywaasyifa"><i class="bi bi-instagram"></i></a>
         <a target="_blank" href="https://github.com/nasywasyifa"><i class="bi bi-github"></i></a>
         <a target="_blank"href="https://www.linkedin.com/"><i class="bi bi-linkedin"></i></a>
-      </div>
+
+      <div class=
       <div class="container">
         <div class="copyright">
           <span>Copyright</span> <strong class="px-1 sitename">Personal</strong> <span>All Rights Reserved</span>

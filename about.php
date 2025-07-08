@@ -61,6 +61,8 @@ $row = mysqli_fetch_assoc($query);
                     <li><a href="resume.php">Resume</a></li>
                     <li><a href="services.php">Services</a></li>
                     <li><a href="portofolio.php">Portofolio</a></li>
+                    <li><a href="portofolio.php">About Me</a></li>
+                    
                     <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
                         <ul>
                             <li><a href="#">Dropdown 1</a></li>

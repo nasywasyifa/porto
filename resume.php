@@ -21,7 +21,8 @@ $queryPengalaman = mysqli_query($koneksi, "SELECT * FROM pengalaman ORDER BY id 
     <!-- Favicons -->
     <link href="assets/depan/img/favicon.png" rel="icon">
     <link href="assets/depan/img/apple-touch-icon.png" rel="apple-touch-icon">
-
+    <link href="assets/depan/img/apple-touch-icon.png" rel="apple-touch-icon">
+    
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com" rel="preconnect">
     <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
