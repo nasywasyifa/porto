@@ -1,5 +1,5 @@
 <?php
-$host_koneksi     = "z4ks04s88og800wkw844gkw8";
+$host_koneksi     = "localhost";
 $username_koneksi = "syifa0506";
 $password_koneksi = "z4ks04s88og800wkw844gkw8";
 $database_koneksi = "default";
