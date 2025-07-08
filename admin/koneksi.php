@@ -1,7 +1,7 @@
 <?php
 $host_koneksi     = "z4ks04s88og800wkw844gkw8";
 $username_koneksi = "syifa0506";
-$password_koneksi = "syifa0506";
+$password_koneksi = "z4ks04s88og800wkw844gkw8";
 $database_koneksi = "default";
 $port_koneksi     = 3306;
 
